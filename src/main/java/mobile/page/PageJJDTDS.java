@@ -51,9 +51,9 @@ public class PageJJDTDS extends AbstractPage {
 			throw new RuntimeException(type + " is unsupported");
 		}
 
-		WaitUtil.untilGone(driver, oImgLoad, WaitUtil.WAIT_MEDIUM);
+		WaitUtil.untilGone(driver, oImgLoad, WaitUtil.WAIT_LONG);
 		vToClick.e().click();
-		WaitUtil.untilGone(driver, oImgLoad, WaitUtil.WAIT_MEDIUM);
+		WaitUtil.untilGone(driver, oImgLoad, WaitUtil.WAIT_LONG);
 	}
 
 	/**
@@ -71,7 +71,6 @@ public class PageJJDTDS extends AbstractPage {
 	public String doInputCode(String code) {
 		WaitUtil.sleep(1000);
 		// 等待并点击代码编辑框
-		driver.navigate().refresh();
 		WebElement e = WaitUtil.waitFor(driver, oEditCode, WaitUtil.WAIT_LONG);
 		// 输入代码并等待数据加载
 		getKeyboard().doInput(e, code);
@@ -83,7 +82,12 @@ public class PageJJDTDS extends AbstractPage {
 	 * @param number
 	 */
 	public void doInputNumber(String number) {
-		getKeyboard().doInput(oEditNumber.e(), number);
+		WebElement e = oEditNumber.e();
+
+		if(!getValue(e).equals(number)) {
+			driver.executeScript("arguments[0].value = ''", e);
+			getKeyboard().doInput(e, number);
+		}
 	}
 
 	/**
@@ -96,9 +100,10 @@ public class PageJJDTDS extends AbstractPage {
 		WaitUtil.sleep(1000);
 		
 		if(time.endsWith("号")) {
-			time = time.substring(0, time.length() - 2);
+			time = time.substring(0, time.length() - 1);
 		}
 		
+
 		switch (type) {
 		case "每月":
 			doChooseMonth(time);
@@ -111,13 +116,13 @@ public class PageJJDTDS extends AbstractPage {
 		}
 	}
 
-	private void doChooseWeek(String time) {
+	private void doChooseMonth(String time) {
 		oTextMonth.e().click();
 		int day = Integer.valueOf(time) - 1;
 		oMenuMonth.es().get(day).click();
 	}
 
-	private void doChooseMonth(String time) {
+	private void doChooseWeek(String time) {
 		oTextWeek.e().click();
 		Week w = Week.fromString(time);
 		oMenuWeek.es().get(w.getIndex()).click();
@@ -139,7 +144,7 @@ public class PageJJDTDS extends AbstractPage {
 	 * @return
 	 */
 	public String doGetBeginTime() {
-		return getText(oEditBeginTime.e());
+		return getValue(oEditBeginTime.e());
 	}
 
 	/**
@@ -147,7 +152,7 @@ public class PageJJDTDS extends AbstractPage {
 	 * @return
 	 */
 	public String doGetEndTime() {
-		return getText(oEditEndTime.e());
+		return getValue(oEditEndTime.e());
 	}
 
 	/**

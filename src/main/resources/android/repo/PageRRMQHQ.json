@@ -8,21 +8,13 @@
 		]
 	},
 
-	"oBtnXQHQ": 
-	{
-		"in": "WEBVIEW_LAST",
-		"bys": 
-		[
-			"xpath:////button[text()='现券还券']"
-		]
-	},
 
 	"oEditCode": 
 	{
 		"in": "WEBVIEW_LAST",
 		"bys": 
 		[
-			"xpath:////input[@id='zqdm' or @id='hqzqdm']"
+			"id://zqdm"
 		]
 	},
 
@@ -31,7 +23,7 @@
 		"in": "WEBVIEW_LAST",
 		"bys": 
 		[
-			"xpath:////p[@id='zqmc' or @id='hqzqmc']"
+			"id://zqmc"
 		]
 	},
 
@@ -49,7 +41,7 @@
 		"in": "WEBVIEW_LAST",
 		"bys": 
 		[
-			"xpath:////input[@id='volume' or @id='hqvolume']"
+			"id://volume"
 		]
 	},
 

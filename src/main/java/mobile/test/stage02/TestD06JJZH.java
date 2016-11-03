@@ -37,7 +37,7 @@ public class TestD06JJZH extends TestBase {
 		// 获取最大可转
 		String vKZ = mPage.doGetZDKZ();
 		// 输入数量、点击转换
-		mPage.doInputZHFE(param.get("转换份额"));
+		mPage.doInputZHFE(param.get("数量"));
 		mPage.doTrade();
 
 		// 处理风险提示框

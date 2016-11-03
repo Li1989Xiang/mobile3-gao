@@ -21,8 +21,6 @@ public class PageLOF extends PageTradeWithSelect {
 	@ElementOf(ElementOfs.NUMBER)
 	private TestElement oEditSL;	// 份额
 
-	private TestElement oTextKYZJ;	// 可用资金
-
 	@ElementOf(ElementOfs.BUTTON_OK)
 	private TestElement oBtnTrade;
 
@@ -34,11 +32,4 @@ public class PageLOF extends PageTradeWithSelect {
 		return getText(oTextSX.e());
 	}
 
-	/**
-	 * 获取可用资金
-	 * @return
-	 */
-	public String doGetKYZJ() {
-		return getText(oTextKYZJ.e());
-	}
 }

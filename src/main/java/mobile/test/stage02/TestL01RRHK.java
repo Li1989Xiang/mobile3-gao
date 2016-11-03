@@ -42,6 +42,7 @@ public class TestL01RRHK extends TestBase {
 			vCheckPoint1 = vCheckPoint1.replace("{PRICE}", vActualPrice);
 
 		} else {
+			mPage.doInputMoney(param.get("数量"));
 			String vKHZJ = mPage.doGetKHZJ();
 			String vXHKE = mPage.doGetXHKE();
 			vCheckPoint1 = vCheckPoint1.replace("{KHZJ}", vKHZJ).replace("{XHKE}", vXHKE);
@@ -52,7 +53,7 @@ public class TestL01RRHK extends TestBase {
 		
 		// 获取对话框1内容并校验
 		Alert alert = mPage.getAlert();
-		String vActualCheckPoint1 = alert.doGetText();
+		String vActualCheckPoint1 = alert.doGetText().replace(",", "");
 		AssertUtil.assertEquals(vCheckPoint1, vActualCheckPoint1);
 		alert.doAccept();
 
@@ -62,8 +63,10 @@ public class TestL01RRHK extends TestBase {
 		AssertUtil.assertContains(vActualCheckPoint2, vCheckPoint2);
 		alert.doAccept();
 
-		// 参数中加入委托编号
-		String vNo = vActualCheckPoint2.substring(vActualCheckPoint2.indexOf("：") + 1, vActualCheckPoint2.length());
-		param.put("委托编号", vNo);
+		if("卖券还款".equals(type)) {
+			// 参数中加入委托编号
+			String vNo = vActualCheckPoint2.substring(vActualCheckPoint2.indexOf("：") + 1, vActualCheckPoint2.length());
+			param.put("委托编号", vNo);
+		}
 	}
 }

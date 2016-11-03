@@ -6,11 +6,10 @@ import mobile.page.base.PageTradeWithSelect;
 import up.light.pagefactory.TestElement;
 
 /**
- * 融资融券还券界面
+ * 融资融券现券还券界面
  * @category Stage-02
  */
-public class PageRRHQ extends PageTradeWithSelect {
-	private TestElement oBtnMQHQ;	// 买券还券
+public class PageRRXQHQ extends PageTradeWithSelect {
 	private TestElement oBtnXQHQ;	// 现券还券
 
 	@ElementOf(ElementOfs.CODE)
@@ -18,8 +17,6 @@ public class PageRRHQ extends PageTradeWithSelect {
 
 	@ElementOf(ElementOfs.NAME)
 	private TestElement oTextName;	// 证券名称
-	
-	private TestElement oEditPrice;	// 价格
 
 	@ElementOf(ElementOfs.NUMBER)
 	private TestElement oEditNum;	// 数量
@@ -28,23 +25,11 @@ public class PageRRHQ extends PageTradeWithSelect {
 	private TestElement oBtnOK;		// 交易按钮
 
 	/**
-	 * 切换还券类型：买券还券、现券还券
+	 * 切换到现券还券
 	 * @param type
 	 */
-	public void doSwitchType(String type) {
-		if ("买券还券".equals(type)) {
-			oBtnMQHQ.e().click();
-		} else {
-			oBtnXQHQ.e().click();
-		}
+	public void doSwitchTo() {
+		oBtnXQHQ.e().click();
 	}
 
-	/**
-	 * 获取价格
-	 * @return
-	 */
-	public String doGetPrice() {
-		return getValue(oEditPrice.e());
-	}
-	
 }

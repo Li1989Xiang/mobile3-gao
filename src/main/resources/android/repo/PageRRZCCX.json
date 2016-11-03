@@ -1,0 +1,28 @@
+{
+	"oTextKQ": 
+	{
+		"in": "WEBVIEW_LAST",
+		"bys": 
+		[
+			"xpath:////span[text()='可取']/following-sibling::span[1]"
+		]
+	},
+
+	"oTextKY": 
+	{
+		"in": "WEBVIEW_LAST",
+		"bys": 
+		[
+			"xpath:////span[text()='可用']/following-sibling::span[1]"
+		]
+	},
+
+	"oImgLoad": 
+	{
+		"in": "WEBVIEW_LAST",
+		"bys": 
+		[
+			"id://loading"
+		]
+	}
+}

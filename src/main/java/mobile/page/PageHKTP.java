@@ -1,6 +1,6 @@
 package mobile.page;
 
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 import mobile.page.base.ElementOf;
 import mobile.page.base.ElementOfs;
@@ -33,9 +33,9 @@ public class PageHKTP extends PageTradeWithSelect {
 	 */
 	public void doInputNos(String ggbh, String yabh) {
 		// getKeyboard().doInput(oEditGGBH, ggbh);
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		jse.executeScript("document.getElementById('ggbh').removeAttribute('readonly');;");
-		oEditGGBH.e().sendKeys(ggbh);
+		WebElement e = oEditGGBH.e();
+		driver.executeScript("arguments[0].removeAttribute('readonly');", e);
+		e.sendKeys(ggbh);
 		getKeyboard().doInput(oEditYABH.e(), yabh);
 	}
 

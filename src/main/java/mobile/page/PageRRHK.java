@@ -4,6 +4,8 @@ import mobile.page.base.ElementOf;
 import mobile.page.base.ElementOfs;
 import mobile.page.base.PageTradeWithSelect;
 import up.light.pagefactory.TestElement;
+import up.light.wait.Conditions;
+import up.light.wait.WaitUtil;
 
 /**
  * 融资融券还款界面
@@ -24,12 +26,28 @@ public class PageRRHK extends PageTradeWithSelect {
 	@ElementOf(ElementOfs.NUMBER)
 	private TestElement oEditNum;	// 数量
 
-	@ElementOf(ElementOfs.BUTTON_OK)
-	private TestElement oBtnOK;		// 交易按钮
+	private TestElement oBtnMC;		// 卖出按钮
+	private TestElement oBtnHK;		// 还款按钮
 
 	private TestElement oEditMoney;	// 还款金额
 	private TestElement oTextKHZJ;	// 可还资金
 	private TestElement oTextXHKE;	// 需还款额
+
+	private int current;	// 0: 卖券还款，1: 现金还款
+
+	@Override
+	public void doTrade() {
+		switch (current) {
+		case 0:
+			oBtnMC.e().click();
+			break;
+		case 1:
+			oBtnHK.e().click();
+			break;
+		default:
+			throw new IllegalStateException();
+		}
+	}
 
 	/**
 	 * 切换还款类型：卖券还款、现金还款
@@ -38,8 +56,10 @@ public class PageRRHK extends PageTradeWithSelect {
 	public void doSwitchType(String type) {
 		if ("卖券还款".equals(type)) {
 			oBtnMQHK.e().click();
+			current = 0;
 		} else {
 			oBtnXJHK.e().click();
+			current = 1;
 		}
 	}
 
@@ -64,7 +84,8 @@ public class PageRRHK extends PageTradeWithSelect {
 	 * @return
 	 */
 	public String doGetKHZJ() {
-		return getText(oTextKHZJ.e()).replace(",", "");
+		return WaitUtil.waitForText(driver, oTextKHZJ.e(), WaitUtil.WAIT_MEDIUM, null, Conditions.NOTBLANK)
+				.replace(",", "");
 	}
 
 	/**

@@ -53,12 +53,21 @@
 		]
 	},
 
-	"oBtnOK": 
+	"oBtnMC": 
 	{
 		"in": "WEBVIEW_LAST",
 		"bys": 
 		[
-			"xpath:////button[contains(@class, 'btn-sell')]"
+			"xpath:////button[contains(text(), '卖出')]"
+		]
+	},
+
+	"oBtnHK": 
+	{
+		"in": "WEBVIEW_LAST",
+		"bys": 
+		[
+			"xpath://(//button[contains(@class, 'btn-sell')])[2]"
 		]
 	},
 

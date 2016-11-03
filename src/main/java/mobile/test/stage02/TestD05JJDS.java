@@ -12,7 +12,6 @@ import mobile.page.base.PageManager;
 import mobile.page.module.Alert;
 import mobile.test.base.TestBase;
 import mobile.test.base.TestDataProvider;
-import up.light.assertutil.AssertFailException;
 import up.light.assertutil.AssertUtil;
 
 /**
@@ -25,6 +24,7 @@ public class TestD05JJDS extends TestBase {
 	public void before() {
 		ViewNavigator.navigate("基金定投", mPage);
 		mPage.doSwitch("基金定赎");
+		mPage.doAdd();
 	}
 	
 	@AfterClass
@@ -67,13 +67,11 @@ public class TestD05JJDS extends TestBase {
 		vAlert.doAccept();
 
 		// 获取对话框2内容并校验
-		String vCheckPoint2 = param.get("验证3");
+		String vCheckPoint2 = param.get("验证2");
 		String vActualCheckPoint2 = vAlert.doGetText();
-		if (vActualCheckPoint2.indexOf(vCheckPoint2) < 0) {
-			throw new AssertFailException(vCheckPoint2, vActualCheckPoint2);
-		}
-
+		AssertUtil.assertContains(vActualCheckPoint2, vCheckPoint2);
 		vAlert.doAccept();
+
 		// 参数中加入委托编号
 		String vNo = vActualCheckPoint2.substring(vActualCheckPoint2.indexOf("：") + 1, vActualCheckPoint2.length());
 		param.put("委托编号", vNo);
