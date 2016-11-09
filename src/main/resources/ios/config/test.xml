@@ -26,10 +26,10 @@
 			<class name="mobile.test.stage02.TestD06JJZH" />
 			<class name="mobile.test.stage02.TestD07JJFHSZ" />
 
-			<class name="mobile.test.stage03.TestE01ETFWXXJRG" />
+<!-- 			<class name="mobile.test.stage03.TestE01ETFWXXJRG" />
 			<class name="mobile.test.stage03.TestE02ETFWXGPRG" />
 			<class name="mobile.test.stage03.TestE03ETFSG" />
-			<class name="mobile.test.stage03.TestE04ETFSH" />
+			<class name="mobile.test.stage03.TestE04ETFSH" /> -->
 
 			<class name="mobile.test.stage03.TestF01LOFSG" />
 			<class name="mobile.test.stage03.TestF02LOFSH" />
@@ -38,16 +38,16 @@
 			<class name="mobile.test.stage02.TestG01HKZCCX" />
 			<class name="mobile.test.stage02.TestG02HKMR" />
 			<class name="mobile.test.stage02.TestG03HKMC" />
-			<class name="mobile.test.stage02.TestG04HKHZZJ" />
+	<!-- 		<class name="mobile.test.stage02.TestG04HKHZZJ" />
 			<class name="mobile.test.stage02.TestG05HKFZCX" />
 			<class name="mobile.test.stage02.TestG06HKEDCX" />
 			<class name="mobile.test.stage02.TestG07HKHLCX" />
-			<class name="mobile.test.stage02.TestG08WJSMXCX" />
+			<class name="mobile.test.stage02.TestG08WJSMXCX" /> -->
 			<class name="mobile.test.stage02.TestG09HKBDZQ" />
 			<class name="mobile.test.stage02.TestG10HKGSXW" />
 			<class name="mobile.test.stage02.TestG11HKTP" />
 
-			<class name="mobile.test.stage03.TestH01GZDJMR" />
+<!-- 			<class name="mobile.test.stage03.TestH01GZDJMR" />
 			<class name="mobile.test.stage03.TestH02GZDJMC" />
 			<class name="mobile.test.stage03.TestH03GZCJQRMR" />
 			<class name="mobile.test.stage03.TestH04GZCJQRMC" />
@@ -56,10 +56,9 @@
 			<class name="mobile.test.stage03.TestH07GZZSMR" />
 			<class name="mobile.test.stage03.TestH08GZZSMC" />
 			<class name="mobile.test.stage03.TestH09GZXJMR" />
-			<class name="mobile.test.stage03.TestH10GZXJMC" />
+			<class name="mobile.test.stage03.TestH10GZXJMC" /> -->
 
 			<class name="mobile.test.stage02.TestI01RRZCCX" />
-
 			<class name="mobile.test.stage02.TestJ01RRRZMR" />
 			<class name="mobile.test.stage02.TestJ02RRRQMC" />
 

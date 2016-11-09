@@ -2,6 +2,8 @@
 	"TestA01ZCCX": "A01资产查询",
 	"TestB01GPMR": "B01股票买入",
 	"TestB02GPMC": "B02股票卖出",
+	"TestB03SJMR": "B03市价买入",
+	"TestB04SJMC": "B04市价卖出",
 	"TestC01YZZZ": "C01银证转账",
 	"TestC02ZFHZ": "C02主辅划转",
 	"TestC03YJGJ": "C03一键归集",
