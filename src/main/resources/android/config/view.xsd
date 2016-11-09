@@ -7,7 +7,9 @@
 			<xsd:sequence>
 				<xsd:element ref="hookLoginDepth" />
 				<xsd:element ref="loginGroupDepth" />
-				<xsd:element ref="view" />
+				<xsd:sequence maxOccurs="unbounded">
+					<xsd:element ref="view" />
+				</xsd:sequence>
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -24,7 +26,8 @@
 			<xsd:attribute name="name" type="xsd:string" use="required" />
 			<xsd:attribute name="repo" type="xsd:string" use="required" />
 			<xsd:attribute name="handler" type="xsd:string" />
-			<xsd:attribute name="enable" type="xsd:boolean" default="true" />
+			<xsd:attribute name="enable" type="xsd:boolean"
+				default="true" />
 		</xsd:complexType>
 	</xsd:element>
 </xsd:schema>
