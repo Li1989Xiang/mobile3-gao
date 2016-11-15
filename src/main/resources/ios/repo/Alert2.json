@@ -13,7 +13,7 @@
 		"in": "WEBVIEW_LAST",
 		"bys": 
 		[
-			"xpath:////button[text()='确定']"
+			"xpath:////button[@data-reactid and text()='确定']"
 		]
 	},
 
@@ -31,7 +31,7 @@
 		"in": "WEBVIEW_LAST",
 		"bys": 
 		[
-			"xpath://(//button[text()='确定'])[2]"
+			"xpath://(//button[@data-reactid and text()='确定'])[2]"
 		]
 	},
 

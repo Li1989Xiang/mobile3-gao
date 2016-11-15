@@ -18,13 +18,13 @@ public class WaitLoad implements INavigationHandler {
 	public void enter(ViewNode node) {
 		initializeElement();
 		node.enter();
-		WaitUtil.untilGone(DriverFactory.getDriver(), e, WaitUtil.WAIT_MEDIUM);
+		WaitUtil.untilGone(DriverFactory.getDriver(), e, WaitUtil.WAIT_LONG);
 	}
 
 	@Override
 	public void back(ViewNode node) {
 		node.back();
-		WaitUtil.untilGone(DriverFactory.getDriver(), e, WaitUtil.WAIT_MEDIUM);
+		WaitUtil.untilGone(DriverFactory.getDriver(), e, WaitUtil.WAIT_LONG);
 	}
 
 	@Override

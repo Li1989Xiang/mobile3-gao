@@ -40,15 +40,21 @@ public class PageLogin extends AbstractPage {
 			WaitUtil.untilGone(driver, oImgLoad, WaitUtil.WAIT_LONG * 3);
 		}
 
+		if (WaitUtil.exists(driver, oImgLoad, WaitUtil.WAIT_SHORT)) {
+			WaitUtil.untilGone(driver, oImgLoad, WaitUtil.WAIT_LONG * 3);
+		}
+
 		Alert alert = getAlert();
 		if (alert.exists()) {
 			String t = alert.doGetText();
-			if(t.contains("“柜台测试”状态"))
+			if (t.contains("“柜台测试”状态"))
 				alert.doAccept();
 			else
 				throw new RuntimeException(t);
 		}
+
 		// 等待登录按钮消失
-		WaitUtil.untilGone(driver, oBtnLogin, WaitUtil.WAIT_SHORT);
+		WaitUtil.untilGone(driver, oBtnLogin, WaitUtil.WAIT_MEDIUM);
+
 	}
 }

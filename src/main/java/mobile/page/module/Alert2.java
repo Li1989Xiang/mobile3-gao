@@ -15,18 +15,18 @@ public class Alert2 extends AbstractPage {
 	private TestElement oTextMsgSuccess;
 	private TestElement oBtnOK;
 	// 委托失败对话框
-	private WebElement oTextMsgFail;
+	private TestElement oTextMsgFail;
 
 	public String doGetConfirmText() {
 		return getMsg(oTextConfirms);
 	}
 
 	public String doGetResultText() {
-		if (WaitUtil.exists(driver, oBtnOK, WaitUtil.WAIT_MEDIUM)) {
-			return getMsg(oTextMsgSuccess);
+		if(WaitUtil.exists(driver, oTextMsgFail, WaitUtil.WAIT_SHORT)) {
+			return getText(oTextMsgFail.e());
 		}
 
-		return getText(oTextMsgFail);
+		return getMsg(oTextMsgSuccess);
 	}
 
 	public void doAcceptConfirm() {

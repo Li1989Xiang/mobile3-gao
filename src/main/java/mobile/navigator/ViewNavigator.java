@@ -12,6 +12,7 @@ public class ViewNavigator {
 	public static ViewTree tree;
 	private static String currentName;
 	private static AbstractPage currentPage;
+	private static int SLEEP_TIME = 1000;
 
 	public static void navigate(String name, AbstractPage targetPage) {
 		ArgumentUtil.notBlank(name, "name must not be blank");
@@ -29,13 +30,13 @@ public class ViewNavigator {
 		LogUtil.log.info("[Navigate] enter: " + enter);
 
 		for (ViewNode node : back) {
-			WaitUtil.sleep(1000);
+			WaitUtil.sleep(SLEEP_TIME);
 			node.backWithHandler();
 			currentName = node.getName();
 		}
 
 		for (ViewNode node : enter) {
-			WaitUtil.sleep(1000);
+			WaitUtil.sleep(SLEEP_TIME);
 			node.enterWithHandler();
 			currentName = node.getName();
 		}
