@@ -29,13 +29,13 @@ public class ViewNavigator {
 		LogUtil.log.info("[Navigate] enter: " + enter);
 
 		for (ViewNode node : back) {
-			WaitUtil.sleep(500);
+			WaitUtil.sleep(1000);
 			node.backWithHandler();
 			currentName = node.getName();
 		}
 
 		for (ViewNode node : enter) {
-			WaitUtil.sleep(500);
+			WaitUtil.sleep(1000);
 			node.enterWithHandler();
 			currentName = node.getName();
 		}
